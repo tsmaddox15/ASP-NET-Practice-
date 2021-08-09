@@ -1,0 +1,39 @@
+﻿@model List<Vidly.Models.Customer>
+
+@{
+    ViewBag.Title = "Customers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col-md-12">
+        <table class="table table-bordered table-striped table-hover">
+            <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+            </thead>
+            <tbody>
+             @*<tr>
+                <td>@Model[0].Id</td>
+                <td>@Model[0].Name</td>
+            </tr>
+            <tr>
+                <td>@Model[1].Id</td>
+                <td>@Model[1].Name</td>
+            </tr>*@
+            
+            @{
+                for (int i = 0; i < Model.Count; i++)
+                {
+                    <tr>
+                        <td>@Model[i].Id</td>
+                        <td>@Model[i].Name</td>
+                    </tr>
+                }
+            }
+            </tbody>
+        </table>
+    </div>
+</div>
